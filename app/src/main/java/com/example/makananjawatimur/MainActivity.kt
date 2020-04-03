@@ -20,37 +20,38 @@ class MainActivity : AppCompatActivity() {
     }
     private fun resepItemClicked(resepItem : data_resep) {
         val showDetailActivityIntent = Intent (this, detail_resep::class.java)
-        showDetailActivityIntent.putExtra(Intent.EXTRA_TEXT, resepItem.nama)
-        showDetailActivityIntent.putExtra(Intent.EXTRA_TITLE, resepItem.gambar)
+        showDetailActivityIntent.putExtra(Intent.EXTRA_TEXT, resepItem.gambar)
+        showDetailActivityIntent.putExtra(Intent.EXTRA_TITLE, resepItem.nama)
         showDetailActivityIntent.putExtra(Intent.EXTRA_TEMPLATE, resepItem.resep)
         startActivity(showDetailActivityIntent)
     }
     private fun createresep() : List<data_resep> {
         val rvlist = ArrayList<data_resep>()
         rvlist.add(
-            data_resep(
-            "Soto Madura","Bahan :\n" +
-                "ayam kampung segar ± 500 gr\n" +
-                "air 1 liter\n" +
-                "bawang merah besar 1 buah, haluskan\n" +
-                "bawang putih 4 buah, haluskan\n" +
-                "daun jeruk 5 lembar\n" +
-                "jahe ½ jari , keprek\n" +
-                "merica bulat 10 butir, haluskan\n" +
-                "sereh 1 buah\n" +
-                "Pelengkap :\n" +
-                "bawang goring\n" +
-                "daun bawang\n" +
-                "jeruk lemon\n" +
-                "soun\n" +
-                "sambel\n" +
-                "Cara membuat :\n" +
-                "Tumis bumbu halus sampai harum kemudian tambahkan daun jeruk, dan sereh\n" +
-                "Masukkan potongan ayam dan tambahkan airnya, masak sampai ayam benar benar matang dan air berkurang hampir ½ .\n" +
-                "Suwir ayam dalam kuah soto dan sajikan dengan pelengkapnya\n"
-                ,"https://kuliner.ilmci.com/wp-content/uploads/2011/06/Soto-Madura-330x248.jpg"))
+            data_resep(R.drawable.soto, "Soto Madura",
+                "Bahan :\n" +
+                        "ayam kampung segar ± 500 gr\n" +
+                        "air 1 liter\n" +
+                        "bawang merah besar 1 buah, haluskan\n" +
+                        "bawang putih 4 buah, haluskan\n" +
+                        "daun jeruk 5 lembar\n" +
+                        "jahe ½ jari , keprek\n" +
+                        "merica bulat 10 butir, haluskan\n" +
+                        "sereh 1 buah\n" +
+                        "Pelengkap :\n" +
+                        "bawang goring\n" +
+                        "daun bawang\n" +
+                        "jeruk lemon\n" +
+                        "soun\n" +
+                        "sambel\n" +
+                        "Cara membuat :\n" +
+                        "Tumis bumbu halus sampai harum kemudian tambahkan daun jeruk, dan sereh\n" +
+                        "Masukkan potongan ayam dan tambahkan airnya, masak sampai ayam benar benar matang dan air berkurang hampir ½ .\n" +
+                        "Suwir ayam dalam kuah soto dan sajikan dengan pelengkapnya\n"
+            )
+        )
         rvlist.add(
-            data_resep(
+            data_resep(R.drawable.getuk,
                 "Getuk Lindri","Bahan : \n" +
                     "250 gr gula pasir\n" +
                     "150 ml air\n" +
@@ -66,10 +67,11 @@ class MainActivity : AppCompatActivity() {
                         " Sesudah halus, bagi adonan singkong menjadi 3 bagian, masing-masing bagian dituangi dengan larutan gula yang telah diberi pewarna sedikit demi sedikit hingga tercampur rata.\n" +
                         " Sesudah rata, masukkan adonan ke dalam gilingan daging. Giling dan potong-potong sepanjang kira-kira 5 cm.\n" +
                         " Hidangkan getuk lindri ini dengan sisa kelapa parut yang telah diberi sedikit gula pasir dan garam.\n"
-                        ,"https://kuliner.ilmci.com/wp-content/uploads/2010/05/GetukLindri-253x300.jpg")
+            )
         )
         rvlist.add(
-            data_resep("Weci (Khas Malang)","Bahan : \n" +
+            data_resep(R.drawable.weci, "Weci (Khas Malang)",
+                "Bahan : \n" +
                     "175 gr tepung terigu\n" +
                     "2 butir telur ayam\n" +
                     "500 ml air\n" +
@@ -91,11 +93,12 @@ class MainActivity : AppCompatActivity() {
                     "4.  Beri gula, garam, dan merica secukupnya sesuai selera\n" +
                     "5.  Panaskan minyak, beri sedikit minyak pada cetakan lalu tuang adonan dan goreng\n" +
                     "6.  Angkat jika weci sudah bewarna kecoklatan\n" +
-                    "7.  Weci siap disajikan.\n" +
-                    ,"http://kuliner.ilmci.com/wp-content/uploads/2015/03/weci.jpg")
+                    "7.  Weci siap disajikan.\n"
+            )
         )
         rvlist.add(
-           data_resep("Sate Ayam Ponorogo","Bahan : \n "+
+           data_resep(R.drawable.sate, "Sate Ayam Ponorogo",
+               "Bahan : \n "+
                    "ayam fillet 500 gram\n" +
                    "tusuk sate secukupnya\n" +
 
@@ -113,11 +116,12 @@ class MainActivity : AppCompatActivity() {
                    "Tumis bumbu yang sudah dihaluskan. Masukkan jahe, garam, dan serai. Masak hingga matang.\n" +
                    "Masak daging ayam selama 10 menit, tiriskan.\n" +
                    "Tusukkan masing-masing daging ayam pada tusuk sate, lalu bakar di atas bara api.\n" +
-                   "Sajikan dengan sambal kecap dan lontong.\n" +
-               ,"http://kuliner.ilmci.com/wp-content/uploads/2011/04/Sate-Ayam-Ponorogo.jpg")
+                   "Sajikan dengan sambal kecap dan lontong.\n"
+           )
         )
         rvlist.add(
-            data_resep("Lontong Kupang","Bahan : \n "+
+            data_resep(R.drawable.kupang, "Lontong Kupang",
+                "Bahan : \n "+
                     "500 gr kupang (sejenis tiram / kerang kecil) yang telah dibersihkan\n" +
                     "Garam secukupnya\n" +
                     "Penyedap secukupnya\n" +
@@ -137,7 +141,7 @@ class MainActivity : AppCompatActivity() {
                     "Setelah itu encerkan dengan membubuhi sedikit kuah kupang (air rebusan kupang).\n" +
                     "Setelah campuran bumbu selesai dibuat, tambahkan irisan lontong di atasnya, kemudian potongan lento.\n" +
                     "Siram dengan kupang di atasnya beserta kuahnya. Untuk toppingnya, taburi dengan bawang merah goreng.\n"
-                ,"http://kuliner.ilmci.com/wp-content/uploads/2015/03/kupang-lontong.jpg")
+            )
         )
         return rvlist
     }
